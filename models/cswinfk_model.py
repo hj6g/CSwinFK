@@ -43,7 +43,7 @@ class CNN_SwinTiny_CA(nn.Module):
         cnn_f, vit_f = self.cross(cnn_tok, swin_tok)
 
         vec = torch.cat(
-            [cnn_f.max(1).values, vit_f.mean(1)],
+            [cnn_f.mean(1), vit_f.mean(1)],
             dim=-1
         )                                             
 
