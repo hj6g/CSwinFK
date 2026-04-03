@@ -12,7 +12,7 @@ from config import (
 )
 from utils import set_seed
 from dataset import build_dataloaders
-from models.cswinfk_model import CNN_SwinTiny_CAtestnewnew
+from models.cswinfk_model import CNN_SwinTiny_CAtest
 from engine import eval_loss_acc
 from metrics import evaluate
 
@@ -33,7 +33,7 @@ def main(seed=SEED, data_dir=''):
     )
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model = CNN_SwinTiny_CAtestnewnew(
+    model = CNN_SwinTiny_CA(
         n_classes=NUM_CLASSES,
         embed_dim=EMBED_DIM
     ).to(device)
